@@ -13,10 +13,12 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <sonar.host.url>http://13.221.189.141:8081/</sonar.host.url>
+        <sonar.projectKey>web-app</sonar.projectKey>
+        <sonar.projectName>web-app</sonar.projectName>
     </properties>
 
     <dependencies>
-        <!-- Servlet API -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -26,6 +28,13 @@
     </dependencies>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.10.0.2594</version>
+            </plugin>
+        </plugins>
         <finalName>web-app</finalName>
     </build>
 
